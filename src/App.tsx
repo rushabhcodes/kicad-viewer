@@ -1,4 +1,4 @@
-import { useQuery } from "react-query"
+import { useQuery } from "@tanstack/react-query"
 import { useState, useEffect } from "react"
 import {
   FaGithub,
@@ -22,7 +22,7 @@ function App() {
     error,
     isLoading: sidebarLoading,
   } = useQuery(
-    "kicadFiles",
+    ["kicadFiles"],
     async () => {
       const response = await fetch(`${serverUrl}/kicad_files.json`)
       if (!response.ok) {
