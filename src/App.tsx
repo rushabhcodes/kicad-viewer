@@ -72,6 +72,8 @@ function App() {
     },
   )
 
+  const AnyPCBViewer = PCBViewer as any
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
   }
@@ -279,8 +281,8 @@ function App() {
                       press "d" on your keyboard to take measurements
                     </div>
                   </div>
-                  <PCBViewer
-                    soup={soup}
+                  <AnyPCBViewer
+                    soup={soup as any}
                     allowEditing={false}
                     height={Math.min(800, window.innerHeight - 200)}
                   />
